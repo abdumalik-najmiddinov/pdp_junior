@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Course</title>
+</head>
+<body>
+<h2>Create a New Course</h2>
+
+<form action="/course-create" method="post" enctype="multipart/form-data">
+
+    <div>
+        <label for="course_name">Course Name:</label>
+        <input type="text" id="course_name" name="course_name" required>
+    </div>
+
+
+    <div>
+        <label for="about">About:</label>
+        <textarea id="about" name="about" rows="4" required></textarea>
+    </div>
+
+
+    <div>
+        <label for="age_limit">Age Limit:</label>
+        <input type="number" id="age_limit" name="age_limit" required>
+    </div>
+
+
+    <div>
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" required>
+    </div>
+
+
+    <div>
+        <label for="image">Course Image:</label>
+        <input type="file" id="image" name="image" required>
+    </div>
+
+    <div>
+        <button type="submit">Create Course</button>
+    </div>
+</form>
+</body>
+</html>
