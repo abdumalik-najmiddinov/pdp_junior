@@ -2,17 +2,16 @@ from sqlalchemy import (create_engine, Column, Integer, String,
                         Text, Boolean)
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-engine = create_engine("postgresql://postgres:abdumalik@localhost:5432/postgres",
+engine = create_engine("sqlite:///database.db",
                        echo=True)
 
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 db = SessionLocal()
 Base = declarative_base()
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 def get_db():
-    db = Session()
+    db = SessionLocal()
     try:
         yield db
     finally:
@@ -68,7 +67,6 @@ class Teacher(Base):
 class Blog(Base):
     __tablename__ = "blog"
     id = Column(Integer, primary_key=True, index=True)
-
     image = Column(String, nullable=False)
     about = Column(String, nullable=False)
 
