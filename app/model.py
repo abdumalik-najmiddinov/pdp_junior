@@ -4,8 +4,9 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 engine = create_engine("postgresql://postgres:abdumalik@localhost:5432/postgres",
                        echo=True)
-Session = sessionmaker(bind=engine, autoflush=False, autocommit=False)
-db = Session()
+
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+db = SessionLocal()
 Base = declarative_base()
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
