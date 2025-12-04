@@ -2,9 +2,9 @@ from sqlalchemy import (create_engine, Column, Integer, String,
                         Text, Boolean)
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-engine = create_engine("postgres://koyeb-adm:npg_y4vVImu2Hjse@ep-floral-cake-a2ybxfz6.eu-central-1.pg.koyeb.app/koyebdb",
-                       echo=True)
-
+engine = create_engine(
+    "postgresql://koyeb-adm:npg_y4vVImu2Hjse@ep-floral-cake-a2ybxfz6.eu-central-1.pg.koyeb.app/koyebdb"
+)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 db = SessionLocal()
 Base = declarative_base()
