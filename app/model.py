@@ -2,7 +2,7 @@ from sqlalchemy import (create_engine, Column, Integer, String,
                         Text, Boolean)
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-engine = create_engine("sqlite:///database.db",
+engine = create_engine("postgres://koyeb-adm:npg_y4vVImu2Hjse@ep-floral-cake-a2ybxfz6.eu-central-1.pg.koyeb.app/koyebdb",
                        echo=True)
 
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
