@@ -2,7 +2,7 @@ from sqlalchemy import (create_engine, Column, Integer, String,
                         Text, Boolean)
 from sqlalchemy.orm import declarative_base, sessionmaker
 engine = create_engine(
-    "postgresql+psycopg://koyeb-adm:npg_Etdp5HAqB8iP@ep-red-wind-a2xnedrh.eu-central-1.pg.koyeb.app/koyebdb",
+    "postgresql+psycopg://koyeb-adm:npg_TXkB9mRUWo0b@ep-summer-frost-agldxmac.c-2.eu-central-1.pg.koyeb.app/koyebdb",
     echo=True
 )
 
