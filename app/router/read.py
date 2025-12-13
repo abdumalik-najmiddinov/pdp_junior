@@ -19,6 +19,12 @@ async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
+@router.get("/index.html", response_class=HTMLResponse)
+async def index(request: Request):
+
+    return templates.TemplateResponse("index.html", {"request": request})
+
+
 
 
 @router.get("/single.html", response_class=HTMLResponse)
