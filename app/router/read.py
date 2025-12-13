@@ -15,22 +15,11 @@ UPLOAD_DIRECTION = "app/media"
 
 @router.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    user_id = request.cookies.get("user_id")
-
-    if not user_id:
-        return RedirectResponse("/login", status_code=HTTP_302_FOUND)
 
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@router.get("/index.html", response_class=HTMLResponse)
-async def index(request: Request):
-    user_id = request.cookies.get("user_id")
 
-    if not user_id:
-        return RedirectResponse("/login", status_code=HTTP_302_FOUND)
-
-    return templates.TemplateResponse("index.html", {"request": request})
 
 @router.get("/single.html", response_class=HTMLResponse)
 async def single_page(request: Request):
