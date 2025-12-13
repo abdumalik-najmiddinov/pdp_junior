@@ -3,13 +3,14 @@ from sqlalchemy import (create_engine, Column, Integer, String,
 from sqlalchemy.orm import declarative_base, sessionmaker
 engine = create_engine(
     "postgresql+psycopg://koyeb-adm:npg_TXkB9mRUWo0b@ep-summer-frost-agldxmac.c-2.eu-central-1.pg.koyeb.app/koyebdb",
-    echo=True
+    echo=True,
+      pool_pre_ping=True,   # ⭐ o‘lik connection’ni tekshiradi
+    pool_recycle=300 
 )
 
 
 
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
-db = SessionLocal()
 Base = declarative_base()
 
 
